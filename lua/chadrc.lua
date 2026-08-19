@@ -9,10 +9,10 @@ M.base46 = {
 	theme = "catppuccin",
   transparency = true,
 
-	-- hl_override = {
-	-- 	Comment = { italic = true },
-	-- 	["@comment"] = { italic = true },
-	-- },
+	hl_override = {
+		Comment = { italic = true, fg = "#7f849c" },
+		["@comment"] = { italic = true, fg = "#7f849c" },
+	},
 }
 M.ui = {
   tabufline = {
