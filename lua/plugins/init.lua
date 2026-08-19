@@ -3,7 +3,11 @@ return {
   { "folke/which-key.nvim", enabled = false },
   {
     "stevearc/oil.nvim",
-    opts = {},
+    opts = {
+      view_options = {
+        show_hidden = true,
+      },
+    },
     -- Optional dependencies
     dependencies = { { "nvim-mini/mini.icons", opts = {} } },
     -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
