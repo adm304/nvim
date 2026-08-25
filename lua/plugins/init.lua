@@ -2,6 +2,37 @@ return {
   { "nvim-tree/nvim-tree.lua", enabled = false },
   { "folke/which-key.nvim", enabled = false },
   {
+    "vhyrro/luarocks.nvim",
+    priority = 1000, -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
+    config = true,
+  },
+  {
+    "3rd/image.nvim",
+    lazy = false,
+    dependencies = { "luarocks.nvim" },
+    opts = {
+      backend = "kitty",
+      processor = "magick_cli", -- or "magick_rock" if you have luarocks set up
+      integrations = {
+        markdown = {
+          enabled = true,
+          clear_in_insert_mode = false,
+          download_remote_images = true,
+          only_render_image_at_cursor = false,
+          filetypes = { "markdown", "vimwiki" },
+        },
+      },
+      max_width = nil,
+      max_height = nil,
+      max_width_window_percentage = nil,
+      max_height_window_percentage = nil,
+      window_overlap_clear_enabled = false,
+      editor_only_render_when_focused = false,
+      tmux_show_only_in_active_window = false,
+      hijack_file_patterns = { "*.png", "*.jpg", "*.jpeg", "*.gif", "*.webp", "*.avif" },
+    },
+  },
+  {
     "stevearc/oil.nvim",
     opts = {
       view_options = {
