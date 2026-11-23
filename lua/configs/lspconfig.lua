@@ -14,8 +14,13 @@ vim.lsp.config("rust_analyzer", {
     },
   },
 })
+vim.lsp.config('vtsls', {
+  cmd = { 'vtsls', '--stdio' },
+  filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
+  root_markers = { 'jsconfig.json', 'tsconfig.json', 'package.json', '.git' },
+})
 
-local servers = { "html", "cssls", "rust_analyzer" }
+local servers = { "html", "cssls", "rust_analyzer", "nil", "clangd", "vtsls"}
 vim.lsp.enable(servers)
 
 -- read :h vim.lsp.config for changing options of lsp servers
